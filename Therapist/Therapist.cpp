@@ -1,6 +1,6 @@
 #include <iostream>
 #include <string>
-#include<windows.h>
+#include <windows.h>
 
 using namespace std;
 
@@ -15,77 +15,90 @@ int searchVal(string base, string sub) {
 
 }
 
+void badFeeling() {
+
+    cout << "I'm sorry to here that, please follow my instructions and hopefully you will feel better." << endl;
+    Sleep(2300);
+
+    cout << "First, what you want to do is to breathe in. Breathe in for 6 seconds until the timer finishes." << endl << endl;
+
+    Sleep(1200);
+    cout << "On your mark, ";
+    Sleep(1000);
+    cout << "Go!" << endl;
+
+    for (int i = 6; i >= 0; --i) {
+
+        Sleep(1000);
+        cout << to_string(i) << endl;
+
+    }
+
+
+    cout << endl << "Great!" << endl << "What you will do next is hold your breath for 7 seconds!" << endl;
+
+    Sleep(1200);
+    cout << "On your mark, ";
+    Sleep(1000);
+    cout << "Go!" << endl;
+
+    for (int i = 7; i >= 0; --i) {
+
+        Sleep(1000);
+        cout << to_string(i) << endl;
+
+    }
+
+    cout << "You did great! Now, what you will do is breathe out for 8 seconds!" << endl;
+
+    Sleep(1200);
+    cout << "On your mark, ";
+    Sleep(1000);
+    cout << "Go!" << endl;
+
+    for (int i = 8; i >= 0; --i) {
+
+        Sleep(1000);
+        cout << to_string(i) << endl;
+
+    }
+
+    cout << endl << "You did very, very well. I hope I made your day at least a little better!" << endl;
+
+
+
+
+}
+
 int main()
 {
     string feeling;
 
+
     cout << "Hello, I am a therapist, how are you feeling?" << endl << "Feeling: ";
-    cin >> feeling;
+    getline(cin, feeling);
+    // Using getline instead of regular cin because of some random bug
 
-
-    if (searchVal(feeling, "happy") == 1 || searchVal(feeling, "feel happy") == 1 || searchVal(feeling, "awesome") == 1 || searchVal(feeling, "very happy") == 1 || searchVal(feeling, "not bad") == 1 || searchVal(feeling, "great") == 1 || searchVal(feeling, "good") == 1) 
-    {
-        if (searchVal(feeling, "feel terrible") == 0 && searchVal(feeling, "feel bad") == 0 && searchVal(feeling, "feeling sad") == 0 && searchVal(feeling, "feel sad") == 0)
+    if (searchVal(feeling, "happy") == 1 || searchVal(feeling, "feel happy") == 1 || searchVal(feeling, "awesome") == 1 || searchVal(feeling, "very happy") == 1 || searchVal(feeling, "not bad") == 1 || searchVal(feeling, "great") == 1 || searchVal(feeling, "good") == 1 || searchVal(feeling, "well") == 1 || searchVal(feeling, "im feeling good") == 1 && feeling != "not good" && searchVal(feeling, "not the best") == 0 || searchVal(feeling, "excited") == 1)
+    {     
+        if (feeling != "im not feeling good" && feeling !=  "im not feeling too good" && feeling !=  "im not feeling the best" && feeling !=  "im not feeling the best today" && feeling != "not good" && feeling != "not well" && searchVal(feeling, "not the best") == 0 && searchVal(feeling, "angry") == 0 && searchVal(feeling, "agitated") == 0 && searchVal(feeling, "scared") == 0 && searchVal(feeling, "worried") == 0 && feeling !=  "sad" && feeling != "not great" && feeling != "not happy" && searchVal(feeling, "disgusted") == 0 && feeling != "not excited" && feeling !=  "not the happiest" && feeling != "worst" && feeling !=  "im not feeling good" && feeling !=  "not too good" && feeling !=  "not well" && feeling != "im nto feeling good" && feeling != "not teh best" && feeling !=  "not the best" && feeling != "horrible" && feeling !=  "im nto feeling too good" && feeling != "im not feeling good")
         {
-            if (feeling != "bad" || feeling != "terrible" || feeling != "sad" || feeling != "mad") 
-            {
-                cout << "I'm very glad to here that!";
-            }
-        }
-    }
-    else {
-
-        cout << "I'm sorry to here that, please follow my instructions and hopefully you will feel better." << endl;
-        Sleep(2300);
-
-        cout << "First, what you want to do is to breathe in. Breathe in for 6 seconds until the timer finishes." << endl << endl;
-
-        Sleep(1200);
-        cout << "On your mark, ";
-        Sleep(1000);
-        cout << "Go!" << endl;
-
-        for (int i = 6; i >= 0; --i) {
-
-            Sleep(1000);
-            cout << to_string(i) << endl;
+            
+            cout << "I'm very glad to here that!";
 
         }
+        else {
 
-        
-        cout << endl << "Great!" << endl << "What you will do next is hold your breath for 7 seconds!" << endl;
-
-        Sleep(1200);
-        cout << "On your mark, ";
-        Sleep(1000);
-        cout << "Go!" << endl;
-
-        for (int i = 7; i >= 0; --i) {
-
-            Sleep(1000);
-            cout << to_string(i) << endl;
+            badFeeling();
 
         }
+    } else {
 
-        cout << "You did great! Now, what you will do is breathe out for 8 seconds!" << endl;
-
-        Sleep(1200);
-        cout << "On your mark, ";
-        Sleep(1000);
-        cout << "Go!" << endl;
-
-        for (int i = 8; i >= 0; --i) {
-
-            Sleep(1000);
-            cout << to_string(i) << endl;
-
-        }
-
-        cout << endl << "You did very, very well. I hope I made your day at least a little better!" << endl;
-
+        badFeeling();
 
     }
 
 
-    return 0;
+    system("pause>0");
+
 }
